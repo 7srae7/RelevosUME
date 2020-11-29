@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:background="@drawable/round_button_settings"
+        >
+
+
+        <ImageButton
+            android:id="@+id/imageButtonAtrasEstado"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="13"
+            android:background="@drawable/sombra"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+
+        <TextView
+            android:id="@+id/txtViewMatriculaRelevoConfi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="82"
+            android:textStyle="bold"
+            android:textSize="28dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@string/estado"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:id="@+id/idRecycleEstado"/>
+
+</LinearLayout>

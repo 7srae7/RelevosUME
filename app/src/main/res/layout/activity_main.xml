@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:background="@drawable/round_button_settings"
+        >
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            app:srcCompat="@drawable/escudo" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70"
+            android:gravity="center|left"
+            android:padding="4dp"
+            android:text="@string/app_name"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="normal|bold"
+            android:elevation="2dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="vertical"
+        android:weightSum="100"
+        android:gravity="center"
+        android:padding="0dp">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/buscadorId"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_weight="70"
+            android:alwaysDrawnWithCache="false"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/sombra"
+            android:elevation="17dp"
+            android:hint="@string/buscar"
+            android:textColor="@color/azul"
+            android:textDirection="firstStrongRtl" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerVehiuclo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:padding="3dp"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:padding="0dp"
+        android:background="@drawable/round_button_settings"
+        >
+
+        <Button
+            android:id="@+id/btnVehiculo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:background="@drawable/round_button_settings"
+            android:text="@string/btnVehiculo"
+            android:textColor="@color/azul"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnDocumentacion"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="36"
+            android:background="@drawable/round_button_settings"
+            android:text="@string/btnDocumentacion"
+            android:textColor="@color/azul"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnRelevo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:background="@drawable/round_button_settings"
+            android:text="@string/btnRelevos"
+            android:textColor="@color/azul"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

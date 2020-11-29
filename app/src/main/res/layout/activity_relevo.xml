@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:background="@drawable/round_button_settings"
+        >
+
+
+        <ImageButton
+            android:id="@+id/imageButtonFlechaRelevo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="13"
+            android:background="@drawable/sombra"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+        <TextView
+            android:id="@+id/txtViewMatriculaRelevo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="82"
+            android:textSize="30dp"
+            android:text="hola"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgRelevo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        android:padding="2dp"
+        />
+
+    <Button
+        android:id="@+id/btnDocuRelevo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="@drawable/sombra"
+        android:text="@string/btnDocumentacion"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnHerraRele"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="@drawable/sombra"
+        android:text="@string/herramienta"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnEstadoRelevo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="@drawable/sombra"
+        android:text="@string/estado"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="40"
+        android:orientation="vertical"
+        android:weightSum="100"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="17"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:gravity="center|left"
+            android:textSize="18dp"
+            android:text="@string/ultimoRelevo"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtViwNombreRelevo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:gravity="center|left"
+            android:textSize="18dp"
+            android:text="test"/>
+
+        <TextView
+            android:id="@+id/txtViwFechaRelevo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:gravity="center|left"
+            android:textSize="18dp"
+            android:text="test"/>
+
+        <TextView
+            android:id="@+id/txtViewNovedades"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="52"
+            android:padding="10dp"
+            android:text="test"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:gravity="center|left|top"
+            android:scrollbars="vertical"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnRelevar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="@color/azul"
+        android:text="@string/relevar"
+        android:textSize="20dp"
+        android:textColor="@color/blanco"
+        android:textStyle="bold" />
+</LinearLayout>

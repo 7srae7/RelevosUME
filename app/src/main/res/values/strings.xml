@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Relevos UME</string>
+    <string name="btnVehiculo">Vehículos</string>
+    <string name="btnDocumentacion">Documentación</string>
+    <string name="btnRelevos">Relevos</string>
+    <string name="buscar">Buscar matrícula</string>
+    <string name="herramienta">Herramienta</string>
+    <string name="estado">Estado del Vehículo</string>
+    <string name="relevar">Relevar</string>
+    <string name="errorListarVehiculo">Error al listar Vehículos</string>
+    <string name="ultimoRelevo">Último Relevo</string>
+    <string name="nombre">Nombre</string>
+    <string name="empleo">Empleo</string>
+    <string name="novedades">Novedades</string>
+    <string name="kilometros">Kilómetros</string>
+    <string name="confRelevo">Confirmar Relevo</string>
+    <string name="relevoCorrecto">Relevo realizado correctamente</string>
+</resources>
