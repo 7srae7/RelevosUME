@@ -23,7 +23,7 @@
                 android:layout_width="250dp"
                 android:layout_height="100dp"
                 android:textSize="30dp"
-                android:text="Hola"
+                android:text=""
                 android:textAlignment="center"
                 android:gravity="center"
                 android:textColor="@android:color/black"/>

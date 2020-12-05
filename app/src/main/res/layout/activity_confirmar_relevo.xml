@@ -34,7 +34,7 @@
             android:textSize="28dp"
             android:textAlignment="center"
             android:gravity="center"
-            android:text="test"/>
+            android:text=""/>
     </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -42,6 +42,7 @@
         android:layout_height="0dp"
         android:layout_weight="10"
         android:layout_marginTop="5dp"
+        android:id="@+id/text_nombre"
         android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -58,6 +59,7 @@
         android:layout_height="0dp"
         android:layout_weight="10"
         android:layout_marginTop="15dp"
+        android:id="@+id/text_empleo"
         android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -73,6 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
+        android:id="@+id/text_kilometros"
         android:layout_marginTop="15dp"
         android:padding="10dp">
 
@@ -104,7 +107,7 @@
         android:gravity="center|left|top"
         android:scrollbars="vertical"
         android:inputType="textMultiLine"
-        android:text="test"/>
+        android:text=""/>
 
 
     <Button

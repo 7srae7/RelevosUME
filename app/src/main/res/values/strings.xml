@@ -15,4 +15,5 @@
     <string name="kilometros">Kilómetros</string>
     <string name="confRelevo">Confirmar Relevo</string>
     <string name="relevoCorrecto">Relevo realizado correctamente</string>
+    <string name="obligatorio">Campo obligatorio</string>
 </resources>

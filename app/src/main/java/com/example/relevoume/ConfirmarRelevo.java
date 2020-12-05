@@ -1,12 +1,15 @@
 package com.example.relevoume;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -19,6 +22,7 @@ import com.example.relevoume.beans.Vehiculo;
 import com.example.relevoume.relevo.RelevoContrac;
 import com.example.relevoume.relevo.RelevoPresenter;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -35,6 +39,9 @@ public class ConfirmarRelevo extends AppCompatActivity implements RelevoContrac.
     private EditText ediNovedades;
     private Button btnConfirmar;
     private RelevoPresenter relevoPresenter;
+    private TextInputLayout textNombre;
+    private TextInputLayout textEmpleo;
+    private TextInputLayout textkilometros;
     private Context context;
 
     @Override
@@ -82,7 +89,6 @@ public class ConfirmarRelevo extends AppCompatActivity implements RelevoContrac.
                 relevo.setNombre(nombreImput.getText().toString());
                 relevo.setEmpleo(empleoInput.getText().toString());
                 relevo.setNovedades(ediNovedades.getText().toString());
-                relevo.setKilometros(Integer.parseInt(kilometrosInput.getText().toString()));
                 relevo.setFechaRelevo(fechaActual());
                 Vehiculo vehiculo = new Vehiculo();
                 Autobomba autobomba = new Autobomba();
@@ -97,7 +103,13 @@ public class ConfirmarRelevo extends AppCompatActivity implements RelevoContrac.
                     autobomba.setIdAutobomba(id);
                     relevo.setAutobomba(autobomba);
                 }
-                relevoPresenter.confirmarRelevo(relevo);
+                if (relevo.getEmpleo().equals("") || relevo.getNombre().equals("") || kilometrosInput.getText().equals("")) {
+                    validate(v);
+                } else {
+                    relevo.setKilometros(Integer.parseInt(kilometrosInput.getText().toString()));
+                    relevoPresenter.confirmarRelevo(relevo);
+                }
+
 
             }
         });
@@ -114,11 +126,15 @@ public class ConfirmarRelevo extends AppCompatActivity implements RelevoContrac.
         kilometrosInput = findViewById(R.id.kilometrosInput);
         ediNovedades = findViewById(R.id.ediNovedades);
         btnConfirmar = findViewById(R.id.btnRelevar);
+        textNombre = findViewById(R.id.text_nombre);
+        textEmpleo = findViewById(R.id.text_empleo);
+        textkilometros = findViewById(R.id.text_kilometros);
         relevoPresenter = new RelevoPresenter(this);
     }
 
     /**
      * Notificación cuando el relevo se realiza correctamente
+     *
      * @param relevo
      */
     @Override
@@ -131,6 +147,7 @@ public class ConfirmarRelevo extends AppCompatActivity implements RelevoContrac.
 
     /**
      * Devuelve la fecha actual
+     *
      * @return
      */
     public String fechaActual() {
@@ -142,4 +159,57 @@ public class ConfirmarRelevo extends AppCompatActivity implements RelevoContrac.
         String date = dia + "/" + mes + "/" + anio;
         return date;
     }
+
+    /**
+     * Valida los campos
+     *
+     * @param view
+     */
+    public void validate(View view) {
+        String nombre = null;
+        if (TextUtils.isEmpty(nombreImput.getText())) {
+            nombre = getString(R.string.obligatorio);
+        }
+        toggleTextInputLayoutError(textNombre, nombre);
+
+        String empleo = null;
+        if (TextUtils.isEmpty(empleoInput.getText())) {
+            empleo = getString(R.string.obligatorio);
+        }
+        toggleTextInputLayoutError(textEmpleo, empleo);
+
+        String kilometros = null;
+        if (TextUtils.isEmpty(kilometrosInput.getText())) {
+            kilometros = getString(R.string.obligatorio);
+        }
+        toggleTextInputLayoutError(textkilometros, kilometros);
+        clearFocus();
+    }
+
+    /**
+     * Borra el mensaje de error cuando el usuario a introducido los parámetros
+     *
+     * @param textInputLayout
+     * @param msg
+     */
+    private static void toggleTextInputLayoutError(@NonNull TextInputLayout textInputLayout,
+                                                   String msg) {
+        textInputLayout.setError(msg);
+        if (msg == null) {
+            textInputLayout.setErrorEnabled(false);
+        } else {
+            textInputLayout.setErrorEnabled(true);
+        }
+    }
+
+    private void clearFocus() {
+        View view = this.getCurrentFocus();
+        if (view != null && view instanceof EditText) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context
+                    .INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            view.clearFocus();
+        }
+    }
+
 }
