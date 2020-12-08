@@ -44,6 +44,7 @@ public class EstadoVehiculoActivity extends AppCompatActivity implements EstadoV
         Bundle bundle = getIntent().getExtras();
         String matricula = bundle.getString("matricula");
         String img = bundle.getString("foto");
+        int id = bundle.getInt("id");
         Vehiculo vehiculo = new Vehiculo();
         vehiculo.setMatricula(matricula);
 
@@ -66,6 +67,7 @@ public class EstadoVehiculoActivity extends AppCompatActivity implements EstadoV
                 Intent i = new Intent(context, RelevoActivity.class);
                 i.putExtra("matricula", matricula);
                 i.putExtra("foto", img);
+                i.putExtra("id", id);
                 context.startActivities(new Intent[]{i});
 
             }

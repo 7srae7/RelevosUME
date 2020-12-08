@@ -120,6 +120,7 @@ public class RelevoActivity extends AppCompatActivity implements RelevoContrac.V
                 Intent i = new Intent(context, DocumentacionActivity.class);
                 i.putExtra("matricula", matricula);
                 i.putExtra("foto", img);
+                i.putExtra("id", id);
                 context.startActivities(new Intent[]{i});
             }
         });
@@ -131,6 +132,7 @@ public class RelevoActivity extends AppCompatActivity implements RelevoContrac.V
                 Intent i = new Intent(context, HerramientaActivity.class);
                 i.putExtra("matricula", matricula);
                 i.putExtra("foto", img);
+                i.putExtra("id", id);
                 context.startActivities(new Intent[]{i});
             }
         });
@@ -143,6 +145,7 @@ public class RelevoActivity extends AppCompatActivity implements RelevoContrac.V
                 Intent i = new Intent(context, EstadoVehiculoActivity.class);
                 i.putExtra("matricula", matricula);
                 i.putExtra("foto", img);
+                i.putExtra("id", id);
                 context.startActivities(new Intent[]{i});
             }
         });

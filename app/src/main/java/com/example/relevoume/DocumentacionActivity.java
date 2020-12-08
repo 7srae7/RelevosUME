@@ -41,6 +41,7 @@ public class DocumentacionActivity extends AppCompatActivity implements Document
         Bundle bundle = getIntent().getExtras();
         String matricula = bundle.getString("matricula");
         String img = bundle.getString("foto");
+        int id = bundle.getInt("id");
         Vehiculo vehiculo = new Vehiculo();
         vehiculo.setMatricula(matricula);
 
@@ -63,6 +64,7 @@ public class DocumentacionActivity extends AppCompatActivity implements Document
                 Intent i = new Intent(context, RelevoActivity.class);
                 i.putExtra("matricula", matricula);
                 i.putExtra("foto", img);
+                i.putExtra("id", id);
                 context.startActivities(new Intent[]{i});
             }
         });
